@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Your AI Blog — Two Simple Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF6EE;
+    --paper-2:#F4ECE0;
+    --ink:#1C1B1A;
+    --muted:#67615A;
+    --line:#E4D9C8;
+    --card:#FFFFFF;
+    --accent:#C25B2C;      /* warm copper — recommended / heat nod */
+    --accent-soft:#F6E3D6;
+    --slate:#2E6A66;       /* cool counterpoint for option B */
+    --slate-soft:#DDEBE8;
+    --shadow:0 1px 2px rgba(28,27,26,.04),0 8px 24px rgba(28,27,26,.07);
+    --shadow-lg:0 2px 6px rgba(28,27,26,.05),0 20px 50px rgba(28,27,26,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Hanken Grotesk",sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 80% -10%, #FFF7EC 0%, rgba(255,247,236,0) 60%),
+      radial-gradient(900px 500px at -10% 10%, #F3E9DA 0%, rgba(243,233,218,0) 55%),
+      var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.4;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+    mix-blend-mode:multiply;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+  /* ---------- type ---------- */
+  h1,h2,h3{font-family:"Fraunces",serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .lead{font-size:1.18rem;color:var(--muted);max-width:62ch}
+
+  /* ---------- hero ---------- */
+  header.hero{padding:84px 0 36px}
+  header.hero h1{font-size:clamp(2.5rem,6vw,4.3rem);margin:.35em 0 .3em}
+  header.hero h1 em{font-style:italic;color:var(--accent)}
+  .prepared{margin-top:30px;display:inline-flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted);
+    background:var(--card);border:1px solid var(--line);padding:9px 16px;border-radius:999px;box-shadow:var(--shadow)}
+  .prepared b{color:var(--ink);font-weight:600}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+
+  /* ---------- sections ---------- */
+  section{padding:46px 0;position:relative}
+  .sec-head{max-width:62ch;margin-bottom:34px}
+  .sec-head h2{font-size:clamp(1.7rem,3.6vw,2.5rem);margin:.3em 0 .35em}
+  .sec-head p{color:var(--muted);font-size:1.06rem}
+
+  .context{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 32px;box-shadow:var(--shadow);
+    display:flex;gap:22px;align-items:flex-start}
+  .context .mark{flex:none;width:46px;height:46px;border-radius:13px;background:var(--accent-soft);display:grid;place-items:center;
+    font-family:"Fraunces",serif;font-size:1.5rem;color:var(--accent);font-weight:600}
+  .context p{font-size:1.07rem}
+  .context b{color:var(--ink)}
+
+  /* ---------- pipeline ---------- */
+  .pipeline{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:14px;align-items:stretch;margin-top:6px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 22px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:8px}
+  .step .ic{font-size:1.6rem}
+  .step .num{font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .step h3{font-size:1.18rem}
+  .step p{font-size:.96rem;color:var(--muted)}
+  .arrow{display:grid;place-items:center;color:var(--accent);font-size:1.5rem;font-weight:700}
+  @media(max-width:760px){
+    .pipeline{grid-template-columns:1fr}
+    .arrow{transform:rotate(90deg);padding:2px 0}
+  }
+
+  /* ---------- layered stack visual ---------- */
+  .stack-wrap{margin-top:14px;background:linear-gradient(180deg,#fff, #FFFDFA);border:1px solid var(--line);border-radius:24px;
+    padding:40px 28px 46px;box-shadow:var(--shadow);text-align:center;overflow:hidden}
+  .stack{position:relative;max-width:520px;margin:0 auto;perspective:1400px}
+  .slab{position:relative;border-radius:16px;padding:20px 22px;text-align:left;border:1px solid var(--line)}
+  .slab .tag{font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+  .slab h4{font-family:"Fraunces",serif;font-size:1.22rem;font-weight:600;margin:3px 0 4px}
+  .slab small{color:var(--muted);font-size:.92rem;display:block}
+
+  .slab.top{background:var(--card);box-shadow:var(--shadow-lg);z-index:3;transform:translateY(10px)}
+  .slab.top .tag{color:var(--accent)}
+  .browser{margin-top:14px;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#fff}
+  .browser .bar{display:flex;gap:6px;align-items:center;padding:9px 12px;background:var(--paper-2);border-bottom:1px solid var(--line)}
+  .browser .bar i{width:9px;height:9px;border-radius:50%;background:#D9CBB6;display:block}
+  .browser .bar span{margin-left:8px;font-size:.74rem;color:var(--muted);font-family:"Hanken Grotesk"}
+  .browser .body{padding:16px 16px 18px}
+  .browser .body .h{height:9px;width:55%;background:var(--ink);border-radius:4px;opacity:.85}
+  .browser .body .l{height:7px;background:var(--line);border-radius:4px;margin-top:9px}
+  .browser .body .l.w1{width:92%}.browser .body .l.w2{width:78%}.browser .body .l.w3{width:85%}
+  .browser .body .chip{display:inline-block;margin-top:13px;font-size:.72rem;font-weight:600;color:var(--accent);
+    background:var(--accent-soft);padding:4px 10px;border-radius:999px}
+
+  .connector{height:26px;width:2px;margin:0 auto;background:linear-gradient(var(--accent),var(--line))}
+  .slab.bottom{background:linear-gradient(180deg,#23323F,#1A2730);color:#EAF1F4;border:none;box-shadow:var(--shadow-lg);
+    margin-top:-2px;transform:translateY(-4px) scale(1.02)}
+  .slab.bottom .tag{color:#8FD3CB}
+  .slab.bottom h4{color:#fff}
+  .slab.bottom small{color:#A9BFC4}
+  .stack-note{margin-top:30px;font-size:.95rem;color:var(--muted);max-width:46ch;margin-left:auto;margin-right:auto}
+
+  /* ---------- options ---------- */
+  .options{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+  @media(max-width:840px){.options{grid-template-columns:1fr}}
+  .opt{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px 28px 32px;box-shadow:var(--shadow);
+    position:relative;display:flex;flex-direction:column;gap:16px;height:100%}
+  .opt.rec{border-color:var(--accent);box-shadow:0 2px 6px rgba(194,91,44,.08),0 22px 50px rgba(194,91,44,.14)}
+  .badge{position:absolute;top:-13px;left:28px;background:var(--accent);color:#fff;font-size:.72rem;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border-radius:999px;box-shadow:var(--shadow)}
+  .opt .kicker{font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+  .opt.rec .kicker{color:var(--accent)} .opt.alt .kicker{color:var(--slate)}
+  .opt h3{font-size:1.55rem}
+  .opt .desc{color:var(--muted);font-size:1rem}
+
+  /* mini diagrams */
+  .diagram{background:var(--paper);border:1px dashed var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;align-items:center}
+  .box{width:100%;border-radius:12px;padding:13px 15px;font-size:.9rem;font-weight:600;border:1.5px solid var(--line);background:#fff;text-align:center}
+  .box small{display:block;font-weight:500;color:var(--muted);font-size:.78rem;margin-top:2px}
+  .box.main{border-color:var(--ink)}
+  .box.blog-a{border-color:var(--accent);background:var(--accent-soft);color:#8a3c18}
+  .box.blog-a small{color:#a8552e}
+  .oneway{font-size:.78rem;color:var(--accent);font-weight:700;display:flex;align-items:center;gap:6px}
+  .oneway::before{content:"↑";font-size:1rem}
+  .nested{width:100%;border:1.5px solid var(--slate);border-radius:12px;padding:14px;background:#fff}
+  .nested .lab{font-weight:600;font-size:.9rem;margin-bottom:9px;text-align:center}
+  .nested .inner{border-radius:9px;padding:10px;background:var(--slate-soft);border:1.5px dashed var(--slate);
+    font-size:.84rem;font-weight:600;color:#1f4f4b;text-align:center}
+
+  ul.pts{list-style:none;display:flex;flex-direction:column;gap:9px}
+  ul.pts li{position:relative;padding-left:26px;font-size:.96rem}
+  ul.pts li .mk{position:absolute;left:0;top:1px;font-weight:700}
+  li.good .mk{color:#2E8B57} li.note .mk{color:var(--muted)}
+  .price{margin-top:auto;border-top:1px solid var(--line);padding-top:16px}
+  .price .amt{font-family:"Fraunces",serif;font-size:1.5rem;font-weight:600}
+  .price .amt span{font-size:.9rem;color:var(--muted);font-family:"Hanken Grotesk";font-weight:500}
+  .price small{display:block;color:var(--muted);font-size:.86rem;margin-top:3px}
+
+  /* ---------- handover + cta ---------- */
+  .handover{background:linear-gradient(180deg,#23323F,#1A2730);color:#EAF1F4;border-radius:24px;padding:42px 36px;box-shadow:var(--shadow-lg)}
+  .handover .eyebrow{color:#8FD3CB}
+  .handover h2{color:#fff;font-size:clamp(1.7rem,3.4vw,2.4rem);margin:.3em 0 .4em}
+  .handover p{color:#BCD0D4;font-size:1.07rem;max-width:60ch}
+  .handover .steps{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .handover .steps span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;
+    padding:8px 15px;font-size:.9rem;color:#EAF1F4}
+
+  .cta{text-align:center;padding:60px 0 30px}
+  .cta h2{font-size:clamp(1.8rem,4vw,2.7rem);margin-bottom:.3em}
+  .cta h2 em{font-style:italic;color:var(--accent)}
+  .cta p{color:var(--muted);font-size:1.1rem;max-width:48ch;margin:0 auto 26px}
+  .pills{display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  .pill{padding:13px 26px;border-radius:999px;font-weight:700;font-size:1rem;border:1.5px solid}
+  .pill.a{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .pill.b{background:#fff;color:var(--slate);border-color:var(--slate)}
+
+  footer{text-align:center;padding:44px 0 60px;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line);margin-top:40px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <div class="eyebrow">Your AI blog · the plan</div>
+    <h1>Two simple ways to add an <em>automatic blog</em> to your website.</h1>
+    <p class="lead">Here's the short, no-jargon version of how it'll work — and the two options for where your blog can live. Have a scroll, then just tell me which one you fancy.</p>
+    <div class="prepared"><span class="dot"></span>Prepared for <b>Commercial Boiler Solutions</b> &nbsp;·&nbsp; by Andrew</div>
+  </header>
+
+  <section class="reveal">
+    <div class="context">
+      <div class="mark">i</div>
+      <p><b>The quick context.</b> Your website is built on a platform called <b>Symphony</b>, which is really designed for online shops — and it doesn't have a built-in way to publish a blog. So to get articles posting automatically, we host the blog on a modern platform called <b>Webflow</b>. There are two neat ways to do that 👇</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="sec-head">
+      <div class="eyebrow">How it works</div>
+      <h2>Three pieces, working together.</h2>
+      <p>You don't touch any of this — it just runs in the background. Here's the journey an article takes:</p>
+    </div>
+    <div class="pipeline">
+      <div class="step">
+        <span class="ic">✍️</span>
+        <span class="num">Step 1</span>
+        <h3>The AI writer</h3>
+        <p>Writes genuinely useful articles for your trade, a few times a month — automatically.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <span class="ic">⚙️</span>
+        <span class="num">Step 2</span>
+        <h3>Webflow</h3>
+        <p>The platform underneath that stores and runs the blog. The engine room — you never really see it.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <span class="ic">🌐</span>
+        <span class="num">Step 3</span>
+        <h3>Your website</h3>
+        <p>The finished articles appear as tidy, professional pages your customers actually read.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="sec-head">
+      <div class="eyebrow">The bit worth picturing</div>
+      <h2>Webflow underneath, your website on top.</h2>
+      <p>Think of it like a building: Webflow is the foundation and plumbing that makes everything run, and your website is the part people actually see and walk through.</p>
+    </div>
+    <div class="stack-wrap">
+      <div class="stack">
+        <div class="slab top">
+          <span class="tag">What your customers see</span>
+          <h4>Your website &amp; blog</h4>
+          <small>Clean, branded pages — exactly what visitors click and read.</small>
+          <div class="browser">
+            <div class="bar"><i></i><i></i><i></i><span>commercialboilersolutions.co.uk</span></div>
+            <div class="body">
+              <div class="h"></div>
+              <div class="l w1"></div><div class="l w2"></div><div class="l w3"></div>
+              <span class="chip">📝 Latest blog article</span>
+            </div>
+          </div>
+        </div>
+        <div class="connector"></div>
+        <div class="slab bottom">
+          <span class="tag">Behind the scenes</span>
+          <h4>Webflow — the platform that powers &amp; hosts it</h4>
+          <small>Runs the site, keeps it fast and secure, and receives each new article. You never have to log in or manage it.</small>
+        </div>
+      </div>
+      <p class="stack-note">So when people say "the website" and "the platform" — these are the two layers. The blog lives on the platform; your visitors only ever see the top.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="sec-head">
+      <div class="eyebrow">Your two options</div>
+      <h2>Where should the blog live?</h2>
+      <p>Both end up with the same automatic AI blog. The only real difference is whether we add it alongside your current site, or build everything fresh in one place.</p>
+    </div>
+    <div class="options">
+
+      <!-- Option A -->
+      <div class="opt rec">
+        <span class="badge">My recommendation</span>
+        <div class="kicker">Option A</div>
+        <h3>A blog alongside your site</h3>
+        <p class="desc">Your current website stays exactly as it is. We add a separate blog at its own web address, built on Webflow.</p>
+        <div class="diagram">
+          <div class="box main">Your current website<small>commercialboilersolutions.co.uk — unchanged</small></div>
+          <div class="oneway">links back to your main site</div>
+          <div class="box blog-a">Your new blog<small>blog.commercialboilersolutions.co.uk · on Webflow</small></div>
+        </div>
+        <ul class="pts">
+          <li class="good"><span class="mk">✓</span> Quickest and lowest-fuss — your current site isn't touched.</li>
+          <li class="good"><span class="mk">✓</span> Lowest cost to get up and running.</li>
+          <li class="note"><span class="mk">•</span> It's a separate little site sitting alongside yours — the blog links across to your main site, but your main site won't link to the blog.</li>
+        </ul>
+        <div class="price">
+          <div class="amt">~$25<span> / month</span></div>
+          <small>Webflow blog platform, on top of your current setup · plus the AI writing tool.</small>
+        </div>
+      </div>
+
+      <!-- Option B -->
+      <div class="opt alt">
+        <div class="kicker">Option B</div>
+        <h3>Everything in one place</h3>
+        <p class="desc">We rebuild your website on Webflow — same look and feel — with the blog built right inside it.</p>
+        <div class="diagram">
+          <div class="nested">
+            <div class="lab">Your website <small style="font-weight:500;color:var(--muted)">(rebuilt on Webflow)</small></div>
+            <div class="inner">…with the blog built in at /blog</div>
+          </div>
+          <div class="oneway" style="visibility:hidden">spacer</div>
+        </div>
+        <ul class="pts">
+          <li class="good"><span class="mk">✓</span> Blog sits inside your main site — one joined-up website.</li>
+          <li class="good"><span class="mk">✓</span> Replaces Symphony, so depending on what you pay now it could work out cheaper.</li>
+          <li class="note"><span class="mk">•</span> A bit more work up front to rebuild — but the tidier long-term result.</li>
+        </ul>
+        <div class="price">
+          <div class="amt">~$25<span> / month</span></div>
+          <small>Webflow replaces your current platform · plus the AI writing tool.</small>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="handover">
+      <div class="eyebrow">What you need to do</div>
+      <h2>Honestly? Pretty much nothing.</h2>
+      <p>I'll build the whole thing, get it working properly, and then hand it all over to you so it's fully yours — accounts and all. No tech or setup for you to worry about, just like we talked about at the start.</p>
+      <div class="steps">
+        <span>1 · I build it</span>
+        <span>2 · I get it all working</span>
+        <span>3 · I hand it over — it's yours</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta reveal">
+    <h2>So — <em>Option A or Option B?</em></h2>
+    <p>Just reply with the one you're leaning towards and I'll take it from there. Any questions at all, fire away.</p>
+    <div class="pills">
+      <span class="pill a">Option A — blog alongside</span>
+      <span class="pill b">Option B — full rebuild</span>
+    </div>
+  </div>
+
+  <footer>Prepared by Andrew · May 2026 · for Commercial Boiler Solutions</footer>
+
+</div>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i,3)*0.06)+'s';io.observe(el)});
+</script>
+</body>
+</html>
