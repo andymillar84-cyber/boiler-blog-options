@@ -35,22 +35,27 @@
       <li>Type this in, exactly as written:
         <span class="type-this">blog.commercialboilersolutions.co.uk</span>
       </li>
-      <li>Keep this page open. You will come back to it.</li>
+      <li>Webflow will now show you a line to copy. It will look like this:
+        <span class="type-this">cdn.webflow.com</span>
+      </li>
+      <li>Write that line down, or keep this page open. You need it in the next step.</li>
     </ol>
 
     <h2 style="font-size:23px; margin-top:16px;">Step 2 of 3: Add one line at Names.co.uk</h2>
     <p style="font-size:19px; color:#4b5563;">Names.co.uk is the company that looks after your web address. You have an account with them. We need to add one line there, so the internet knows where your blog lives.</p>
     <ol class="steps">
       <li>Open a new tab. Go to <strong>names.co.uk</strong> and log in.</li>
-      <li>Find your domain: <strong>commercialboilersolutions.co.uk</strong>.</li>
-      <li>Click <b class="btn-name">DNS settings</b>. It may be called <b class="btn-name">Advanced DNS</b>.</li>
-      <li>Click <b class="btn-name">Add record</b> (or "Add new record").</li>
-      <li>Fill in the 3 boxes like this:
+      <li>Click the <b class="btn-name">Services</b> tab, then <b class="btn-name">Dashboard</b>.</li>
+      <li>Click your domain: <strong>commercialboilersolutions.co.uk</strong>.</li>
+      <li>Scroll to the bottom. Click <b class="btn-name">DNS Settings</b>.</li>
+      <li>Find the part called <b class="btn-name">Add/Modify DNS zone</b>.</li>
+      <li>Fill in the boxes like this:
+        <span class="type-this">Host name: blog</span>
         <span class="type-this">Type: CNAME</span>
-        <span class="type-this">Name: blog</span>
-        <span class="type-this">Value: proxy-ssl.webflow.com</span>
+        <span class="type-this">Result: the line Webflow showed you</span>
       </li>
-      <li>Click <b class="btn-name">Save</b>.</li>
+      <li>If there is a box called <strong>TTL</strong>, leave it as it is.</li>
+      <li>Click <b class="btn-name">Save</b> (or "Update DNS").</li>
     </ol>
 
     <div class="warn">
