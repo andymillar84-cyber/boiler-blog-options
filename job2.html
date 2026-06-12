@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Job 2 — Put the Blog on Your Web Address</title>
+<link rel="stylesheet" href="guide.css">
+</head>
+<body>
+
+<header>
+  <h1>Job 2 of 3:<br>Put the Blog on Your Web Address</h1>
+  <p>Takes about 5 minutes, plus a short wait</p>
+</header>
+
+<div class="wrap">
+
+  <a class="back-link" href="setup-guide.html" style="margin-top:24px; display:inline-block;">← Back to all jobs</a>
+
+  <div class="card" style="margin-top:16px;">
+    <p><strong>Why this matters:</strong> right now the blog lives on a free web address that has nothing to do with your business. Moving it to <strong>blog.commercialboilersolutions.co.uk</strong> means every article builds up <em>your</em> company's name on Google — not someone else's. It also looks more professional to customers.</p>
+
+    <div class="warn">
+      <strong>Don't worry:</strong> this will NOT touch your main website. We are only adding one new thing. Nothing gets changed or removed.
+    </div>
+
+    <h2 style="font-size:23px; margin-top:32px;">Step 1 of 3: Tell Webflow the new blog address</h2>
+    <ol class="steps">
+      <li>Go to <strong>webflow.com</strong> and log in.</li>
+      <li>Open your site, <strong>Commercial Boiler Solutions</strong>.</li>
+      <li>Click the gear wheel ⚙️ to open <b class="btn-name">Site settings</b>.</li>
+      <li>Click the tab called <b class="btn-name">Publishing</b>.</li>
+      <li>Click <b class="btn-name">Add custom domain</b>.</li>
+      <li>Type this in, exactly as written:
+        <span class="type-this">blog.commercialboilersolutions.co.uk</span>
+      </li>
+      <li>Keep this page open. You will come back to it.</li>
+    </ol>
+
+    <h2 style="font-size:23px; margin-top:16px;">Step 2 of 3: Add one line at Names.co.uk</h2>
+    <p style="font-size:19px; color:#4b5563;">Names.co.uk is the company that looks after your web address. You have an account with them. We need to add one line there, so the internet knows where your blog lives.</p>
+    <ol class="steps">
+      <li>Open a new tab. Go to <strong>names.co.uk</strong> and log in.</li>
+      <li>Find your domain: <strong>commercialboilersolutions.co.uk</strong>.</li>
+      <li>Click <b class="btn-name">DNS settings</b>. It may be called <b class="btn-name">Advanced DNS</b>.</li>
+      <li>Click <b class="btn-name">Add record</b> (or "Add new record").</li>
+      <li>Fill in the 3 boxes like this:
+        <span class="type-this">Type: CNAME</span>
+        <span class="type-this">Name: blog</span>
+        <span class="type-this">Value: proxy-ssl.webflow.com</span>
+      </li>
+      <li>Click <b class="btn-name">Save</b>.</li>
+    </ol>
+
+    <div class="warn">
+      <strong>Important:</strong> only ADD this one new record. Do not change or delete anything else on that page. The other records run your website and email.
+    </div>
+
+    <h2 style="font-size:23px; margin-top:32px;">Step 3 of 3: Back in Webflow to finish</h2>
+    <ol class="steps">
+      <li>Go and have a cup of tea. The internet needs about 30 minutes to catch up.</li>
+      <li>Go back to the Webflow page from before.</li>
+      <li>Click <b class="btn-name">Check status</b> next to your new web address.</li>
+    </ol>
+    <div class="see"><strong>You will see:</strong> a green tick or the word "Connected". If it's not green yet, wait a bit longer and try again.</div>
+    <ol class="steps" start="4" style="counter-reset: step 3;">
+      <li>Click the big <b class="btn-name">Publish</b> button.</li>
+    </ol>
+    <p style="margin-bottom:0;">Done! Your blog now lives on your own web address.</p>
+  </div>
+
+  <a class="big-btn" href="job3.html">Next: Job 3 — Let Google find your blog →</a>
+  <a class="big-btn secondary" href="setup-guide.html">← Back to all jobs</a>
+
+  <div class="help">
+    <strong>Stuck on anything?</strong> Send Andrew a message on Upwork. A photo of your screen helps a lot.
+  </div>
+
+</div>
+</body>
+</html>

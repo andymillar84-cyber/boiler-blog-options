@@ -5,191 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Your Blog — 3 Small Jobs to Finish</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, "Segoe UI", Roboto, "Open Sans", Arial, sans-serif;
-    font-size: 21px;
-    line-height: 1.7;
-    color: #1a1a1a;
-    background: #f7f5f0;
-  }
-  .wrap {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 32px 24px 80px;
-  }
-  header {
-    background: #14532d;
-    color: #ffffff;
-    padding: 48px 24px;
-    text-align: center;
-  }
-  header h1 {
-    font-size: 34px;
-    line-height: 1.3;
-    max-width: 680px;
-    margin: 0 auto;
-  }
-  header p {
-    font-size: 22px;
-    margin-top: 16px;
-    color: #d1fae5;
-  }
-  h2 {
-    font-size: 28px;
-    line-height: 1.4;
-    margin: 0 0 8px;
-  }
-  .part-label {
-    display: inline-block;
-    background: #14532d;
-    color: #ffffff;
-    font-size: 17px;
-    font-weight: 700;
-    padding: 6px 16px;
-    border-radius: 999px;
-    margin-bottom: 14px;
-    letter-spacing: 0.5px;
-  }
-  p { margin-bottom: 24px; }
-  .card {
-    background: #ffffff;
-    border: 2px solid #e2ddd3;
-    border-radius: 16px;
-    padding: 36px 32px;
-    margin-top: 48px;
-  }
-  .intro-card {
-    background: #ffffff;
-    border: 2px solid #e2ddd3;
-    border-radius: 16px;
-    padding: 36px 32px;
-    margin-top: -36px;
-  }
-  ol.steps {
-    list-style: none;
-    counter-reset: step;
-    margin: 28px 0 8px;
-  }
-  ol.steps li {
-    counter-increment: step;
-    position: relative;
-    padding: 0 0 28px 70px;
-    min-height: 52px;
-  }
-  ol.steps li::before {
-    content: counter(step);
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 48px;
-    height: 48px;
-    background: #14532d;
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 700;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .see {
-    background: #ecfdf5;
-    border: 2px solid #34d399;
-    border-radius: 12px;
-    padding: 18px 22px;
-    margin: 8px 0 28px 70px;
-    font-size: 19px;
-  }
-  .see strong { color: #065f46; }
-  .warn {
-    background: #fffbeb;
-    border: 2px solid #f59e0b;
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin: 24px 0;
-    font-size: 20px;
-  }
-  .warn strong { color: #92400e; }
-  .type-this {
-    display: block;
-    background: #1a1a1a;
-    color: #ffffff;
-    font-family: "Courier New", monospace;
-    font-size: 20px;
-    font-weight: 700;
-    padding: 16px 20px;
-    border-radius: 10px;
-    margin: 10px 0;
-    word-break: break-all;
-    text-align: center;
-  }
-  .why {
-    font-size: 19px;
-    color: #4b5563;
-    border-left: 5px solid #d1d5db;
-    padding-left: 18px;
-    margin-bottom: 28px;
-  }
-  .time {
-    font-size: 18px;
-    font-weight: 700;
-    color: #14532d;
-    margin-bottom: 20px;
-  }
-  .need-list {
-    list-style: none;
-    margin: 20px 0 0;
-  }
-  .need-list li {
-    padding: 12px 0 12px 44px;
-    position: relative;
-    border-bottom: 1px solid #eee9de;
-    font-size: 20px;
-  }
-  .need-list li:last-child { border-bottom: none; }
-  .need-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 6px;
-    color: #14532d;
-    font-weight: 700;
-    font-size: 22px;
-  }
-  .done-banner {
-    background: #14532d;
-    color: #ffffff;
-    border-radius: 16px;
-    padding: 36px 32px;
-    margin-top: 48px;
-    text-align: center;
-  }
-  .done-banner h2 { color: #ffffff; }
-  .done-banner p { color: #d1fae5; margin: 16px 0 0; }
-  .help {
-    background: #eff6ff;
-    border: 2px solid #60a5fa;
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-top: 24px;
-    font-size: 20px;
-  }
-  b.btn-name {
-    background: #eef2ff;
-    border: 1.5px solid #c7d2fe;
-    border-radius: 8px;
-    padding: 2px 10px;
-    white-space: nowrap;
-  }
-  @media (max-width: 540px) {
-    body { font-size: 19px; }
-    .card, .intro-card { padding: 28px 20px; }
-    ol.steps li { padding-left: 58px; }
-    ol.steps li::before { width: 42px; height: 42px; font-size: 20px; }
-    .see { margin-left: 58px; }
-  }
-</style>
+<link rel="stylesheet" href="guide.css">
 </head>
 <body>
 
@@ -204,6 +20,7 @@
     <p>Hi Graeme,</p>
     <p>Good news. Your blog is working. It writes articles about boilers and posts them by itself.</p>
     <p>There are <strong>3 small jobs</strong> left. Only you can do them, because they need your logins.</p>
+    <p>Each job has its own page. Click the green button to start a job. You can do them one at a time — there's no rush.</p>
     <p style="margin-bottom:0;"><strong>Before you start, have these ready:</strong></p>
     <ul class="need-list">
       <li>Your bank card</li>
@@ -213,104 +30,34 @@
     </ul>
   </div>
 
-  <!-- PART 1 -->
+  <!-- JOB 1 -->
   <div class="card">
-    <span class="part-label">JOB 1 of 3</span>
+    <span class="part-label">JOB 1</span>
     <h2>Set up automatic posting</h2>
-    <p class="time">⏱ Takes about 5 minutes</p>
-    <p><strong>Right now</strong> the blog is on the basic plan. It costs $49 US a month (about £38). On this plan, the blog still writes articles — but a person has to press the post button for each one.</p>
-    <p>The <strong>"Pro" plan</strong> makes it fully automatic. The blog writes and posts new articles all by itself. No thinking, no buttons, nothing to remember.</p>
-
-    <p style="margin-bottom:0;"><strong>To upgrade, these are the steps:</strong></p>
-    <ol class="steps">
-      <li>Go to <strong>app.trysight.ai</strong> and log in.</li>
-      <li>Find the <b class="btn-name">Billing</b> page. It is in the settings menu.</li>
-      <li>Add your bank card.</li>
-      <li>Pick the plan called <b class="btn-name">Pro</b>.</li>
-    </ol>
-    <div class="see"><strong>Good to know:</strong> Pro costs $129 US a month. That is about £100.</div>
-    <p>That's it. Andrew will turn on the autopilot after this is done.</p>
-    <div class="warn" style="margin-bottom:0;">
-      <strong>This one is your choice:</strong> the Pro plan is only needed for automatic posting. If you would rather press the post button yourself for each article, you can skip this job and stay on the cheaper plan.
-    </div>
+    <p class="job-meta">⏱ About 5 minutes · needs your bank card</p>
+    <p>Upgrade the blog tool to the "Pro" plan, so it posts new articles all by itself.</p>
+    <div class="overview-why"><strong>Why it matters:</strong> without this, a person has to press the post button for every article. With it, the blog runs with no thinking at all. (This one is optional — the page explains.)</div>
+    <a class="big-btn" href="job1.html">Start Job 1 →</a>
   </div>
 
-  <!-- PART 2 -->
+  <!-- JOB 2 -->
   <div class="card">
-    <span class="part-label">JOB 2 of 3</span>
+    <span class="part-label">JOB 2</span>
     <h2>Put the blog on your web address</h2>
-    <p class="time">⏱ Takes about 5 minutes, plus a short wait</p>
-    <p class="why">Why: right now the blog lives on a free web address. Moving it to <strong>blog.commercialboilersolutions.co.uk</strong> helps you show up on Google.</p>
-
-    <div class="warn">
-      <strong>Don't worry:</strong> this will NOT touch your main website. We are only adding one new thing. Nothing gets changed or removed.
-    </div>
-
-    <h2 style="font-size:23px; margin-top:32px;">Step 1 of 3: Tell Webflow the new blog address</h2>
-    <ol class="steps">
-      <li>Go to <strong>webflow.com</strong> and log in.</li>
-      <li>Open your site, <strong>Commercial Boiler Solutions</strong>.</li>
-      <li>Click the gear wheel ⚙️ to open <b class="btn-name">Site settings</b>.</li>
-      <li>Click the tab called <b class="btn-name">Publishing</b>.</li>
-      <li>Click <b class="btn-name">Add custom domain</b>.</li>
-      <li>Type this in, exactly as written:
-        <span class="type-this">blog.commercialboilersolutions.co.uk</span>
-      </li>
-      <li>Keep this page open. You will come back to it.</li>
-    </ol>
-
-    <h2 style="font-size:23px; margin-top:16px;">Step 2 of 3: Add one line at Names.co.uk</h2>
-    <p style="font-size:19px; color:#4b5563;">Names.co.uk is the company that looks after your web address. You have an account with them. We need to add one line there, so the internet knows where your blog lives.</p>
-    <ol class="steps">
-      <li>Open a new tab. Go to <strong>names.co.uk</strong> and log in.</li>
-      <li>Find your domain: <strong>commercialboilersolutions.co.uk</strong>.</li>
-      <li>Click <b class="btn-name">DNS settings</b>. It may be called <b class="btn-name">Advanced DNS</b>.</li>
-      <li>Click <b class="btn-name">Add record</b> (or "Add new record").</li>
-      <li>Fill in the 3 boxes like this:
-        <span class="type-this">Type: CNAME</span>
-        <span class="type-this">Name: blog</span>
-        <span class="type-this">Value: proxy-ssl.webflow.com</span>
-      </li>
-      <li>Click <b class="btn-name">Save</b>.</li>
-    </ol>
-
-    <div class="warn">
-      <strong>Important:</strong> only ADD this one new record. Do not change or delete anything else on that page. The other records run your website and email.
-    </div>
-
-    <h2 style="font-size:23px; margin-top:32px;">Step 3 of 3: Back in Webflow to finish</h2>
-    <ol class="steps">
-      <li>Go and have a cup of tea. The internet needs about 30 minutes to catch up.</li>
-      <li>Go back to the Webflow page from before.</li>
-      <li>Click <b class="btn-name">Check status</b> next to your new web address.</li>
-    </ol>
-    <div class="see"><strong>You will see:</strong> a green tick or the word "Connected". If it's not green yet, wait a bit longer and try again.</div>
-    <ol class="steps" start="4" style="counter-reset: step 3;">
-      <li>Click the big <b class="btn-name">Publish</b> button.</li>
-    </ol>
-    <p style="margin-bottom:0;">Done! Your blog now lives on your own web address.</p>
+    <p class="job-meta">⏱ About 5 minutes, plus a short wait · needs your Webflow and Names.co.uk logins</p>
+    <p>Move the blog onto <strong>blog.commercialboilersolutions.co.uk</strong> — your own web address.</p>
+    <div class="overview-why"><strong>Why it matters:</strong> right now the blog sits on a free address that has nothing to do with your business. On your own address, every article builds up <em>your</em> company's name on Google. It also looks more professional to customers.</div>
+    <a class="big-btn" href="job2.html">Start Job 2 →</a>
   </div>
 
-  <!-- PART 3 -->
+  <!-- JOB 3 -->
   <div class="card">
-    <span class="part-label">JOB 3 of 3</span>
+    <span class="part-label">JOB 3</span>
     <h2>Let Google find your blog</h2>
-    <p class="time">⏱ Takes about 3 minutes — do this AFTER Job 2</p>
-    <p class="why">Why: this tells Google your blog exists. Without it, the articles sit there and Google never looks at them.</p>
-
-    <ol class="steps">
-      <li>Go back to <strong>app.trysight.ai</strong>.</li>
-      <li>Find the button that says <b class="btn-name">Connect Google Search Console</b>. It is in the settings area.</li>
-      <li>Click it. A Google sign-in window will open.</li>
-      <li>Sign in with your Google account.</li>
-      <li>Click <b class="btn-name">Allow</b> when Google asks.</li>
-    </ol>
-    <div class="see"><strong>You will see:</strong> the page says "Connected". That means Google and your blog are now talking to each other.</div>
-  </div>
-
-  <div class="done-banner">
-    <h2>That's everything! 🎉</h2>
-    <p>Your blog now writes itself, posts itself, and tells Google about it — all on its own.</p>
+    <p class="job-meta">⏱ About 3 minutes · needs your Google login · do this AFTER Job 2</p>
+    <p>Connect the blog to Google, so Google reads each new article.</p>
+    <div class="overview-why"><strong>Why it matters:</strong> Google does not know a new article exists until it's told. Without this, the articles sit unseen — and customers never find them.</div>
+    <a class="big-btn" href="job3.html">Start Job 3 →</a>
   </div>
 
   <div class="help">
