@@ -22,7 +22,7 @@
     <p><strong>Why this matters:</strong> right now the blog lives on a free web address that has nothing to do with your business. Moving it to <strong>blog.commercialboilersolutions.co.uk</strong> means every article builds up <em>your</em> company's name on Google — not someone else's. It also looks more professional to customers.</p>
 
     <div class="warn">
-      <strong>Don't worry:</strong> this will NOT touch your main website. We are only adding one new thing. Nothing gets changed or removed.
+      <strong>Don't worry:</strong> this will NOT touch your main website. Your normal website will look the same as always — the blog is its own separate page. We are only adding new things. Nothing gets changed or removed.
     </div>
 
     <h2 style="font-size:23px; margin-top:32px;">Step 1 of 3: Tell Webflow the new blog address</h2>
@@ -35,10 +35,10 @@
       <li>Type this in, exactly as written:
         <span class="type-this">blog.commercialboilersolutions.co.uk</span>
       </li>
-      <li>Webflow will now show you a line to copy. It will look like this:
+      <li>Webflow will now show you what to copy. It may be <strong>one or two lines</strong>. One will look like this:
         <span class="type-this">cdn.webflow.com</span>
       </li>
-      <li>Write that line down, or keep this page open. You need it in the next step.</li>
+      <li>Keep this page open. In the next step, you will copy the <strong>exact</strong> lines Webflow shows you — not the example above.</li>
     </ol>
 
     <h2 style="font-size:23px; margin-top:16px;">Step 2 of 3: Add one line at Names.co.uk</h2>
@@ -54,25 +54,31 @@
         <span class="type-this">Type: CNAME</span>
         <span class="type-this">Result: the line Webflow showed you</span>
       </li>
+      <li>Did Webflow show a <strong>second</strong> line? It starts with "one-time-verification". If yes, add one more record:
+        <span class="type-this">Host name: _webflow</span>
+        <span class="type-this">Type: TXT</span>
+        <span class="type-this">Result: that long second line</span>
+      </li>
       <li>If there is a box called <strong>TTL</strong>, leave it as it is.</li>
       <li>Click <b class="btn-name">Save</b> (or "Update DNS").</li>
     </ol>
+    <div class="see"><strong>Can't see the boxes?</strong> Tick <strong>"Activate advanced DNS"</strong> and click Activate. Then the boxes will appear. And if your menus look a bit different to these steps, just find the page that lists your domain name and click on it.</div>
 
     <div class="warn">
-      <strong>Important:</strong> only ADD this one new record. Do not change or delete anything else on that page. The other records run your website and email.
+      <strong>Important:</strong> only ADD these new records. Do not change or delete anything else on that page. The other records run your website and email.
     </div>
 
     <h2 style="font-size:23px; margin-top:32px;">Step 3 of 3: Back in Webflow to finish</h2>
     <ol class="steps">
-      <li>Go and have a cup of tea. The internet needs about 30 minutes to catch up.</li>
+      <li>Go and have a cup of tea. The internet usually catches up within an hour — but it can take up to a day.</li>
       <li>Go back to the Webflow page from before.</li>
       <li>Click <b class="btn-name">Check status</b> next to your new web address.</li>
     </ol>
-    <div class="see"><strong>You will see:</strong> a green tick or the word "Connected". If it's not green yet, wait a bit longer and try again.</div>
+    <div class="see"><strong>You will see:</strong> a green tick or the word "Connected". Not green yet? <strong>You did nothing wrong.</strong> Don't change anything — just check again later, even tomorrow.</div>
     <ol class="steps" start="4" style="counter-reset: step 3;">
       <li>Click the big <b class="btn-name">Publish</b> button.</li>
     </ol>
-    <p style="margin-bottom:0;">Done! Your blog now lives on your own web address.</p>
+    <p style="margin-bottom:0;">Done! To see it worked: type <strong>blog.commercialboilersolutions.co.uk</strong> into your browser. Your blog will appear.</p>
   </div>
 
   <a class="big-btn" href="job3.html">Next: Job 3 — Let Google find your blog →</a>
